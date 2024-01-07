@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel start-backend start-frontend",
+    "start": "npm-run-all --parallel install-frontend install-backend start-backend start-frontend",
+    "install-frontend": "cd FRONTEND/client && npm install",
+    "install-backend": "cd app && npm install",
     "start-backend": "node app/app.js",
     "start-frontend": "cd FRONTEND/client && npm start"
   },
