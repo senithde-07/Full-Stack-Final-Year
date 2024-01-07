@@ -1,5 +1,28 @@
 {
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel start-backend start-frontend",
+    "start-backend": "node app/app.js",
+    "start-frontend": "cd FRONTEND/client && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "socket.io-client": "^4.7.3"
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.2",
+    "npm-run-all": "^4.1.5"
   }
 }

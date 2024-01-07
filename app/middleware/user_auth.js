@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const User = require('../models/user');
 const jwt = require("jsonwebtoken");
 
@@ -7,7 +7,7 @@ const isAuthenticated = (req, res, next) => {
     const token = authHeader && authHeader.split(' ')[1];
     if (token == null) return res.status(401).send('Unauthorized');
   
-    jwt.verify(token, process.env.SECRET, (err, user) => {
+    jwt.verify(token, "Ksja82njakajkHSH80us8SHA0U291SY892AJSKJAS", (err, user) => {
       if (err) return res.status(403).send('You are not authorized');
       req.user = user
       next()

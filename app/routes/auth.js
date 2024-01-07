@@ -1,3 +1,4 @@
+require('dotenv').config()
 let express = require('express');
 const jwt = require("jsonwebtoken");
 
@@ -34,13 +35,14 @@ router.post('/login', async (req, res) => {
             const hashedLoginPass = await bcrypt.compare(password, user.password)
             if (hashedLoginPass) {
 
-                const accessToken = jwt.sign({ uid: user._id, name: user.name, role: user.role }, process.env.SECRET, { expiresIn: '24h' });
-
+                const accessToken = jwt.sign({ uid: user._id, name: user.name, role: user.role },"Ksja82njakajkHSH80us8SHA0U291SY892AJSKJAS", { expiresIn: '24h' });
+console.log("Hi");
                 return res
                     .status(200)
                     .json({ status: 'You have logged in successfully', token: accessToken });
 
             } else {
+                console.log("Invalid");
                 return res.status(400).json({ msg: 'Invalid credentials' })
             }
         }
@@ -49,7 +51,7 @@ router.post('/login', async (req, res) => {
             res.status(401).send({ message: "empty credentials" });
         }
     } catch (err) {
-
+        console.log(err);
         res.send({ mesage: 'Failed to execute the operation' });
     }
 

@@ -53,7 +53,8 @@ export default function Signup() {
 
       
       const { token } = await response.json();
-   
+      console.log(token);
+   //return;
       Auth.login(token);
 
 
