@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel install-frontend install-backend start-backend start-frontend",
+    "start": "npm-run-all --sequential install-frontend install-backend start-frontend start-backend",
     "install-frontend": "cd FRONTEND/client && npm install",
     "install-backend": "cd app && npm install",
-    "start-backend": "node app/app.js",
-    "start-frontend": "cd FRONTEND/client && npm start"
-  },
+    "start-frontend": "cd FRONTEND/client && npm start",
+    "start-backend": "node app/app.js"
+  },  
   "keywords": [],
   "author": "",
   "license": "ISC",
