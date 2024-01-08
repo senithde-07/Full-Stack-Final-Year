@@ -57,6 +57,8 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'gym-pro'
+          
           slot-name: 'Production'
           package: .
+          start-command: 'npm start'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FB46356354FC40B989D136B2B65BDD77 }}
